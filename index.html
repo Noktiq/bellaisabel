@@ -5,12 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Embedded Itch.io Game</title>
     <style>
-       
+        /* Set iframe to 100% width and maintain aspect ratio */
+        iframe {
+            width: 100%;
+            height: auto;
+            max-width: 800px; /* Maximum width for large screens */
+            aspect-ratio: 4 / 3; /* Maintain aspect ratio (800/600 = 4/3) */
+            border: 0;
+        }
+
+        /* Media query for mobile devices (screens less than 600px wide) */
+        @media (max-width: 600px) {
+            iframe {
+                max-width: 100%; /* Full width for small screens */
+                height: auto;
+                aspect-ratio: 16 / 9; /* Adjust aspect ratio for mobile (optional) */
+            }
+        }
     </style>
 </head>
 <body>
 
-    <iframe src="https://itch.io/embed-upload/YOUR_GAME_URL" allowfullscreen></iframe>
+    <iframe src="https://itch.io/embed-upload/11407959?color=333333" allowfullscreen></iframe>
 
 </body>
 </html>
