@@ -3,30 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Embedded Itch.io Game</title>
+    <title>Embedded Itch.io Project</title>
     <style>
-        /* Set iframe to 100% width and maintain aspect ratio */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
         iframe {
             width: 100%;
-            height: auto;
-            max-width: 800px; /* Maximum width for large screens */
-            aspect-ratio: 4 / 3; /* Maintain aspect ratio (800/600 = 4/3) */
+            height: 100vh;
+            max-width: 100%;
+            max-height: 100vh;
             border: 0;
-        }
-
-        /* Media query for mobile devices (screens less than 600px wide) */
-        @media (max-width: 600px) {
-            iframe {
-                max-width: 100%; /* Full width for small screens */
-                height: auto;
-                aspect-ratio: 16 / 9; /* Adjust aspect ratio for mobile (optional) */
-            }
         }
     </style>
 </head>
 <body>
-
-    <iframe src="https://itch.io/embed-upload/11407959?color=333333" allowfullscreen></iframe>
-
+    <div class="container">
+        <iframe src="https://itch.io/embed-upload/11407959?color=333333" allowfullscreen></iframe>
+    </div>
 </body>
 </html>
