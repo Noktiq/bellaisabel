@@ -14,6 +14,7 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
+            background-color: #f0f0f0; /* Change background color here */
         }
         .container {
             position: absolute;
@@ -26,11 +27,9 @@
             align-items: center;
         }
         iframe {
-        padding: 0px; /* Add padding inside the iframe if you need more spacing from edges */
-        width: calc(100vw - 3px); /* Adjust the width calculation to account for the padding */
-        height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 0px); /* Adjust height similarly */
-    
-
+            padding: 0px; /* Add padding inside the iframe if you need more spacing from edges */
+            width: calc(100vw - 10px); /* Adjust the width calculation to account for the padding */
+            height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 0px); /* Adjust height similarly */
         }
     </style>
 </head>
