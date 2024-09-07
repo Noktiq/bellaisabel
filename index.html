@@ -14,44 +14,57 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
+            position: relative;
         }
 
-        .container {
+        /* Background layers */
+        .left-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30%; /* Left side occupies 30% of the screen width */
+            height: 100%;
+            background-color: #ff6666; /* Left block color */
+            z-index: 0; /* Ensures this stays in the background */
+        }
+
+        .right-bg {
+            position: absolute;
+            top: 0;
+            left: 30%; /* Start after the left block */
+            width: 70%; /* Right side occupies 70% of the screen width */
+            height: 100%;
+            background-color: #333333; /* Right block color */
+            z-index: 0; /* Ensures this stays in the background */
+        }
+
+        /* Container for the iframe on top */
+        .content {
+            position: relative;
+            z-index: 1; /* Ensures this stays on top of the background blocks */
             display: flex;
+            justify-content: center;
+            align-items: center;
             width: 100%;
             height: 100%;
         }
 
-        /* Left side color block */
-        .left-side {
-            background-color: #ff6666; /* Change to your preferred color */
-            width: 30%; /* Left side takes up 30% of the screen width */
-            height: 100vh;
-        }
-
-        /* Right side color block */
-        .right-side {
-            background-color: #333333; /* Change to your preferred color */
-            width: 70%; /* Right side takes up 70% of the screen width */
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
         iframe {
-            padding: 0px;
-            width: 95%; /* Adjust the iframe size inside the right block */
-            height: 95%;
+            width: 100vw;
+            height: 100vh;
+            border: 0;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="left-side"></div> <!-- Left block color -->
-        <div class="right-side">      <!-- Right block color with iframe inside -->
-            <iframe src="https://itch.io/embed-upload/11407959?color=333333" allowfullscreen></iframe>
-        </div>
+    <!-- Background color blocks -->
+    <div class="left-bg"></div>
+    <div class="right-bg"></div>
+
+    <!-- Content layer with iframe -->
+    <div class="content">
+        <iframe src="https://itch.io/embed-upload/11407959?color=333333" allowfullscreen></iframe>
     </div>
+
 </body>
 </html>
